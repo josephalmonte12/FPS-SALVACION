@@ -9,4 +9,15 @@ public class Bullet : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(other.transform.parent.gameObject);
+        }
+    }
+
+        
 }

@@ -23,15 +23,17 @@ public class GameManager : MonoBehaviour
 
     public void LoseVida(int vidaToR){
     vida -= vidaToR;
+    gunAmmo = 10;
     CheckHealt();
    }
 
    
     public void CheckHealt(){
-    if(vida <=0){
+    if(vida <=0 || WinCheck.Instance.isWin){
         Debug.Log("Haz muerto!!");
        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
     }
+       
    }
 }

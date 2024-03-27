@@ -14,7 +14,8 @@ private void OnTriggerEnter(Collider other){
             Destroy(other.gameObject);
         }
 
-        if(other.gameObject.CompareTag("Muerte")){
+        if(other.gameObject.CompareTag("Muerte") || other.gameObject.CompareTag("Enemy"))
+        {
              GameManager.Instance.LoseVida(2);
 
              
@@ -26,5 +27,10 @@ private void OnTriggerEnter(Collider other){
 
         }
 
+
+
+
 }
+
+
 }
